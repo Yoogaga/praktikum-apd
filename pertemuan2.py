@@ -1,7 +1,2 @@
-hujan = True
-
-if hujan == True: 
-    print("Makan mie!")
-
-else:
-    print("Kuliah")
+nama = str(input(f"{"Masukkan Nama anda" :20}: "))
+print(f"{"Hallo" :20}: {nama}")
