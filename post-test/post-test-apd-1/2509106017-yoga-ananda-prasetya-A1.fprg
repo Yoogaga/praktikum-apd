@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Posttest 1"/>
+        <attribute name="authors" value="USER"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-09-15 08:37:03 AM"/>
+        <attribute name="created" value="VVNFUjtERVNLVE9QLVRRT0lUUkg7MjAyNS0wOS0xMzswODoyMzozOSBBTTsyNzMz"/>
+        <attribute name="edited" value="VVNFUjtERVNLVE9QLVRRT0lUUkg7MjAyNS0wOS0xNTswODozNzowMyBBTTszOzI4NDE="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="nilai" type="Real" array="False" size=""/>
+            <declare name="kategori" type="String" array="False" size=""/>
+            <output expression="&quot;Masukkan Nilai Mahasiswa&quot;" newline="True"/>
+            <input variable="nilai"/>
+            <if expression="nilai &gt;= 0 and nilai &lt;= 100">
+                <then>
+                    <if expression="nilai &gt;= 80">
+                        <then>
+                            <assign variable="kategori" expression="&quot;A&quot;"/>
+                        </then>
+                        <else>
+                            <if expression="nilai &gt;= 70">
+                                <then>
+                                    <assign variable="kategori" expression="&quot;B&quot;"/>
+                                </then>
+                                <else>
+                                    <if expression="nilai &gt;= 60">
+                                        <then>
+                                            <assign variable="kategori" expression="&quot;C&quot;"/>
+                                        </then>
+                                        <else>
+                                            <assign variable="kategori" expression="&quot;D&quot;"/>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                    <output expression="&quot;Nilai mahasiswa : &quot; &amp;kategori" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Nilai tidak valid, coba lagi!&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
