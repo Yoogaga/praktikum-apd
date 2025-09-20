@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="no 2"/>
+        <attribute name="authors" value="USER"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-09-12 12:28:48 AM"/>
+        <attribute name="created" value="VVNFUjtERVNLVE9QLVRRT0lUUkg7MjAyNS0wOS0xMTswODozMTozMyBQTTsyNzM5"/>
+        <attribute name="edited" value="VVNFUjtERVNLVE9QLVRRT0lUUkg7MjAyNS0wOS0xMjsxMjoyODo0OCBBTTsxOzI4NDA="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="totalbelanja" type="Integer" array="False" size=""/>
+            <declare name="hargaakhir" type="Integer" array="False" size=""/>
+            <output expression="&quot;Masukkan total belanja&quot;" newline="True"/>
+            <input variable="totalbelanja"/>
+            <if expression="totalbelanja &gt; 200">
+                <then>
+                    <assign variable="hargaakhir" expression="totalbelanja"/>
+                    <output expression="&quot;Total belanja = &quot; &amp;hargaakhir" newline="True"/>
+                </then>
+                <else>
+                    <if expression="totalbelanja &gt; 100">
+                        <then>
+                            <assign variable="hargaakhir" expression="totalbelanja + 10"/>
+                        </then>
+                        <else>
+                            <assign variable="hargaakhir" expression="totalbelanja + 20"/>
+                        </else>
+                    </if>
+                    <output expression="&quot;Total belanja = &quot; &amp;hargaakhir" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
