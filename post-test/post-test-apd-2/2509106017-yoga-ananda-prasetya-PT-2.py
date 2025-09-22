@@ -24,4 +24,4 @@ print(f"{'|'} {'Tinggi Badan' :30}: {tinggi_badan:.2f} {' ' * (29 - len(str(ting
 print(f"{'|'} {"Berat Badan" :30}: {berat_badan:.2f} {' ' * (29 - len(str(berat_badan)))} {'|'}")
 print(f"{'|'} {'Berat Ideal' :30}: {berat_ideal:.2f} {' ' * (29 - len(str(berat_ideal)))} {'|'}")
 print(f"{'|'} {'Status' :30}: {status[int(isKelebihan)]} {' ' * (30 - len(str(status[int(isKelebihan)])))} {'|'}")
-print("-" * 67) 
+print("-" * 67)
