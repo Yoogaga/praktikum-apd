@@ -704,6 +704,7 @@ while True:
                 # Prinsip kerja bagian kode ini sama dengan bagian kode yang ada pada admin
                 else: 
                     while True: 
+                        # Display menu
                         print("=" * 74)
                         print(f"Selamat datang kembali, {username_login}")
                         print(f"Anda login sebagai: {role_anda}")
