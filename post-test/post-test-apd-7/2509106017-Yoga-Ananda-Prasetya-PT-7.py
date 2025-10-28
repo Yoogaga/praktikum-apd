@@ -1,8 +1,8 @@
 # Import library yang diperlukan
 import os
 import time
-from fungsi import *
 import fungsi
+from fungsi import *
 
 # Deklarasi Dictionary yang diperlukan
 akun = {
@@ -23,12 +23,20 @@ akun = {
         "game": {
             "g1": {"nama": "MudRunner", "tahun": "2017", "dev": "Saber Interactive", "status": "Belum Tamat"},  
             }
+        },
+    
+    "acc3": {
+        "username": "Nabubu", 
+        "password": "Krotago", 
+        "role": "admin", 
+        "game": {}
         }
 }
 
 # Perulangan Utama yang akan terus mengulang program sampai pengguna memilih untuk berhenti 
-while True: 
+while True:
     try: 
+        clear()
         konfirmasi_login = False # Mengatur apakah pengguna sudah login atau belum (Sudah = True, Belum = False)
         kesempatan = 4 # Mengatur kesempatan login yang dimiliki pengguna
         gagal_login = False # Merupakan parameter yang akan digunakan apabila pengguna menghabiskan kesempatan loginnya
@@ -49,21 +57,24 @@ while True:
 
         # Input Pilihan Pengguna
         print("Silakan pilih menu yang anda inginkan:")
-        aksi = int(input("> "))
+        aksi = input("> ")
         print("=" * 80)
-
-        # Bagian untuk membersihkan terminal
         clear()
 
-        if aksi == 0:
+        if aksi == "0":
             break
-        elif aksi == 1: 
+        elif aksi == "1": 
             login()
-        elif aksi == 2: 
-            register()
+        elif aksi == "2": 
+            print("=" * 80)
+            pergi_register = input("Apakah anda ingin membuat akun (y/n)? ")
+            print("=" * 80)
+            clear()
+            
+            register(pergi_register)
             fungsi.konfirmasi_login = False
         else: 
-            print("Pilihan tidak valid")
+            raise ValueError("Pilihan Tidak valid")
         
         if fungsi.konfirmasi_login == True: 
             while True:
@@ -87,33 +98,31 @@ while True:
                 print("=" * 74)
                 print("Masukkan Menu yang Anda Inginkan :")
                 print("=" * 74)
-                pilih_menu = int(input("> "))
+                pilih_menu = input("> ")
                 print("=" * 74)
 
                 clear()
 
-                if pilih_menu == 0:
+                if pilih_menu == "0":
                     break
-                elif pilih_menu == 1: 
+                elif pilih_menu == "1": 
                     tambah_game()
-                elif pilih_menu == 2: 
+                elif pilih_menu == "2": 
                     lihat_game()
-                elif pilih_menu == 3: 
+                elif pilih_menu == "3": 
                     update_game()
-                elif pilih_menu == 4: 
+                elif pilih_menu == "4": 
                     hapus_game()
-                elif pilih_menu == 5 and fungsi.role_anda == "admin": 
+                elif pilih_menu == "5" and fungsi.role_anda == "admin": 
                     menu_admin()
                 else: 
-                    print("Piihan Tidak valid")
+                    print("Pilihan tidak valid!")
                     clear()
-    
-    except AttributeError: 
-        print("Pilihan Tidak Valid")
-        clear()
 
-    except ValueError: 
-        print("Pilihan Tidak Valid")
+    except ValueError as e: 
+        print("=" * 80)
+        print(e)
+        print("=" * 80)
         clear()
 
 print("Program Selesai!")
